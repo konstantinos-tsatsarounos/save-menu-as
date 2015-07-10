@@ -8,7 +8,8 @@
     var $publishingBox = false,
         $menuId = false,
         $menuName = false,
-        $saveAsButton = false;
+        $saveAsButton = false,
+        $selectMenu = false;
 
     $('#wpbody').append($('<div id="new_menu_form" title="Naming Box"><label>Please insert a name for the new menu!</label><input type="text" class="widefat" id="new-menu-name"></div>'));
 
@@ -27,7 +28,9 @@
                 $menuName = $('#new-menu-name').val();
 
                 ajaxcall( { 'id' : $menuId, 'name' : $menuName }, function(data){
-                    $('select#menu').html( $('select#menu').html() + '<option value="'+data+'">'+$menuName+'</option>' )
+                    if( $selectMenu = $('select#menu') ){
+                        $selectMenu.html( $selectMenu.html() + '<option value="'+data+'">'+$menuName+'</option>' );
+                    }
                     $(that).dialog('close');
                 })
             },
