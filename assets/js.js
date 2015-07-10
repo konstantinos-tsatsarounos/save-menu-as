@@ -1,5 +1,5 @@
 /**
- * Created by NEOGEEK on 10/7/2015.
+ * Created by Konstantinos Tsatsarounos<konstantinos.tsatsarounos@gmail.com> on 10/7/2015.
  */
 
 ;(function($){
